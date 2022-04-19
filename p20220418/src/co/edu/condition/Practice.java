@@ -44,23 +44,28 @@ public class Practice {
 		// 100~90:A, 89~80:B, 79~70:C
 		
 		System.out.println("\n\n학점을 입력하십시오. >>>");
-		int grade = Integer.parseInt(sc.nextLine());
-		int grade2 = (int) grade/10;
-		switch (grade2) {
-		case  7:
+		int grade = sc.nextInt();
+		if((grade/10) >= 10) {
+			// 100보다 큰 숫자가 들어올 때 10으로 처리
+			grade = 10;
+		} else {
+			grade /= 10; // grade = grade / 10
+		}
+		
+		switch (grade) {
+		case 7:
 			System.out.println("당신의 학점은 C입니다.");
 			break;
-		case  8:
+		case 8:
 			System.out.println("당신의 학점은 B입니다.");
 			break;
-		case  9:
+		case 9:
+		case 10:
 			System.out.println("당신의 학점은 A입니다.");
-			break;
-		default:
-			System.out.println("당신의 학점은 F입니다.");
 			break;
 		}
 
+		
 	}
 
 }
