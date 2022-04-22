@@ -1,7 +1,7 @@
 package co.edu.extend;
 //부모클래스
 public class AirPlane {
-	public void lan() {
+	public void land() {
 		System.out.println("착륙합니다");
 	}
 	public void fly() {

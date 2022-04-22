@@ -26,6 +26,8 @@ public class Main {
 		
 		Computer com = new Computer();
 		com.areaCircle(60);
+		
+		Member mem = new Person(); // 자동 타입 변환 : 부모클래스 변수 = new 자식클래스(); 
 				
 		
 	}
