@@ -55,8 +55,8 @@ public class StudentMain {
 				
 				for (int i = 0; i < stuArr.length; i++) {
 					avgArr[i] += stuArr[i].avg(); // 평균값이 avgArr에 들어가게 하기...
-				}
-				for (int i = 0; i < avgArr.length; i++) {
+				} 
+				for (int i = 0; i <avgArr.length; i++) {
 					for (int j = 0; j < avgArr.length; j++) {
 						if(avgArr[i] <avgArr[j]) { // 배열의 인덱스 별로 자신보다 큰 인덱스의 개수를 카운트
 							rank++;
