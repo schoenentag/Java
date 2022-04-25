@@ -66,16 +66,18 @@ public class Student {
 		
 		// Method
 		
-		void info() {
+		public int info() {
 			System.out.println("학번 : " + getStudentNo());
 			System.out.println("이름 : " + getStudentName());
 			System.out.println("국어 점수 : " + getKor());
 			System.out.println("영어 점수 : " + getEng());
 			System.out.println("수학 점수 : " + getMath());
+			System.out.println("평균 : " + getAvg());
+			return 1;
 		}
 		
-		double avg() {
-			return (kor + eng + math)/3;
+		public double getAvg() {
+			return (kor + eng + math)/3.0;
 		}
 
 }
