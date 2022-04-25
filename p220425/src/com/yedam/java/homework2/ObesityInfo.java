@@ -4,44 +4,43 @@ public class ObesityInfo extends StandardWeightInfo {
 	// Field
 	// Constructor
 	public ObesityInfo() {
-		
+
 	}
+
 	public ObesityInfo(String name, int height, int weight) {
 		super();
 		this.name = name;
 		this.height = height;
 		this.weight = weight;
 	}
-	
+
 	// Method
 	@Override
 	public void getInformation() {
-		
-		System.out.printf("%s님의 신장 %d, 몸무게 %d %s입니다.", name, height, weight,getInformation2());
-		
+
+		System.out.println(name + "님의 신장, " + height + ", 몸무게 " + weight + ", " + getObesity2() + "입니다.");
 
 	}
-	
-	public String getInformation2() {
-		if (getStandardWeight() < 90) {
+
+	public String getObesity2() {
+		if (getObesity() < 80) {
 			return "저체중";
-		} else if(getStandardWeight()  >= 90 && getStandardWeight() <110) {
+		} else if (getObesity() <= 90) {
 			return "정상체중";
-		} else if(getStandardWeight()  >= 110 && getStandardWeight() <120) {
+		} else if (getObesity() < 110) {
+			return "정상";
+		} else if (getObesity() < 120) {
 			return "과체중";
-		} else if(getStandardWeight()  >= 120) {
+		} else {
 			return "비만";
 		}
-		return name;
 	
+
 	}
-	
-	@Override
-	public double  getStandardWeight() {
+
+	public double getObesity() {
 		// Weight/표준체중 * 100
 		return (double) weight / getStandardWeight() * 100;
 	}
 
 }
-
-
