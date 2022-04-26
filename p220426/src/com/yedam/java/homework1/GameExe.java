@@ -20,8 +20,9 @@ public class GameExe {
 		} else {
 			System.out.println("유효하지 않는 값입니다.");
 		}
+		boolean run = true;
 
-		while (true) {
+		while (run) {
 			System.out.println(
 					"============================================================================================");
 			System.out
@@ -46,12 +47,9 @@ public class GameExe {
 				System.out.println("RPGgame 실행");
 			} else if (random == 0 && choice == 9) {
 				System.out.println("EXIT");
-				break;
-			} //else {
-				//System.out.println("잘못된 값을 입력하셨습니다.");
-			//} // 예외처리까지 같이 출력되서 어떻게 하면 좋을지 모르겠음...
-
-			if (random == 1 && choice == 1) {
+				run = false;
+				
+			}else if (random == 1 && choice == 1) {
 				r_game.leftUpButton();
 			} else if (random == 1 && choice == 2) {
 				r_game.leftDownButton();
@@ -66,11 +64,12 @@ public class GameExe {
 				System.out.println("ArcadeGame 실행");
 			} else if (random == 1 && choice == 9) {
 				System.out.println("EXIT");
-				break;
-			}// else {
-				//System.out.println("잘못된 값을 입력하셨습니다.");
-			//}
+				run = false;
+			} else {
+				System.out.println("잘못된 값을 입력하셨습니다.");
+			}
 		}
+		System.out.println("프로그램을 종료합니다.");
 
 	}
 }
