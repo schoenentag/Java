@@ -5,23 +5,22 @@ public class Movie extends Culture{
 	String genre;
 	
 	//Constructor
-	public Movie() {
 		
-	}
-
-	public Movie(String genre) {
-		super();
+	public Movie(String title, int dirNo, int actNo, String genre) {
+		super(title, dirNo, actNo);
 		this.genre = genre;
 	}
-	
+
+
+
 	//Methode
 	// 제목, 참여감독 수, 참여배우 수, 관객수, 총점, 평점을 출력하는 기능
 	@Override
 	public void getInformation() {
-		System.out.println("영화제목 : " + title);
+		System.out.println(genre +" 제목 : " + title);
 		System.out.println("감독 : " + actNo);
-		System.out.println("영화총점 : score");
-		System.out.println("영화평점");
+		System.out.println(genre + " 총점 : "+ totalscore);
+		System.out.println(genre+" 평점 : " + getGrade());
 		
 	}
 	

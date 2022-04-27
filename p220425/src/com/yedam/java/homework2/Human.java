@@ -20,7 +20,7 @@ public class Human {
 	
 	//Method
 	public void getInformation() {
-		System.out.printf("%s님의 신장 %d, 몸무게 %d 입니다.", name, height, weight);
+		System.out.print("이름 : " + this.name + " 키 : " +this.height +" 몸무게 : " + this.weight);
 	}
 	
 

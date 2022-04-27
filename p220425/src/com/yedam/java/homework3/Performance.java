@@ -6,20 +6,18 @@ public class Performance extends Culture {
 	String genre;
 	// Constructor;
 
-	public Performance() {
-	};
 
-	public Performance(String genre) {
-		super();
+	public Performance(String title, int dirNo, int actNo, String genre) {
+		super(title, dirNo, actNo);
 		this.genre = genre;
 	}
 
 	@Override
 	public void getInformation() {
-		System.out.println("공연제목 : " + title);
+		System.out.println(genre+" 제목 : " + title);
 		System.out.println("감독 : " + actNo);
-		System.out.println("공연총점 : score");
-		System.out.println("공연평점");
+		System.out.println(genre + " 총점 : "+totalscore);
+		System.out.println(genre +" 평점 : "+ getGrade());
 
 	}
 
