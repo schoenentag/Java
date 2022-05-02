@@ -9,6 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		String answer = null;
 		boolean run = true;
+		int count = 0;
 		// 1. 배열 만들기 => ArrayList 이용
 		List<String> list = new ArrayList<String>();
 		list.add("Orange");
@@ -40,8 +41,10 @@ public class Main {
 			System.out.println(" 1.문자하나 | 2.단어 | 3.입력내역 | 4.새 게임 | 5.종료 ");
 			System.out.println("------------------------------------------------");
 
+			try {
 			Scanner sc = new Scanner(System.in);
 			int menu = Integer.parseInt(sc.nextLine()); // 사용자가 입력하는 메뉴
+			
 			switch (menu) {
 			case 1:
 				List<String> inputArr = new ArrayList<String>(); // 배열 인덱스 0,1,2,3,4
@@ -49,18 +52,25 @@ public class Main {
 //				1) 문자 하나를 입력하여 문제를 구성하는 문자가 맞는 지 확인합니다.
 //			    2) 순서와 상관없이 문제를 구성하는 모든 문자가 입력되면 더이상 입력할 수 없습니다.
 				System.out.println("현재까지 확인된 문자열의 문자들은 다음과 같습니다.");
-				//System.out.println(inputArr);// 입력된 값과 random값이 일치할 경우 표기
+				System.out.println(inputArr);// 입력된 값과 random값이 일치할 경우 표기
 
 				System.out.println("입력값 >>");
 				String input = sc.nextLine();
+				System.out.println(input);
 				
-				if (answer.indexOf(input) != -1) {
-				inputArr.add(input);
-				System.out.println("문자열을 구성하는 문자입니다.");
-				if (input.length() == answer.length()) {
+				if(count != answer.length()) {
+					if (answer.indexOf(input) != -1) { // if 인덱스 밖에 벗어나 있지 않다면.. 
+						inputArr.add(input);
+						//System.out.println(inputArr);
+						System.out.println("문자열을 구성하는 문자입니다.");
+						count++;
+					}
+					else {
+						System.out.println("문자열을 구성하는 문자가 아닙니다.");
+						}
+					
+				} else  { //(count == answer.length())
 					System.out.println("문자열을 구성하는 문자를 다 입력하셨습니다.");
-				}else {
-					System.out.println("문자열을 구성하는 문자가 아닙니다.");};
 
 					// true : 문자열을 구성하는 문자입니다.
 					// false : 문자열을 구성하는 문자가 아닙니다.
@@ -72,16 +82,25 @@ public class Main {
 			case 2:
 //				1) 단어를 입력하여 문제를 구성하는 문자가 순서에 맞게 입력되었는 지 확인합니다.
 //			    2) 단어의 길이와 문제의 길이가 다를 경우 안내 메세지를 출력합니다.
+				
+				// int location = inputArr.indexOf(answer);
+				// answer와 inputArr 인덱스값비교(equals, 또는 equalsIgnorCase)
+				// if 값이 같으면 O, 아니면 X
+				// 입력값과 answer값이 같으면 정답입니다.
 
 				break;
 
 			case 3:
 //				1) 현재까지 맞게 입력한 문자들을 출력합니다.
+				//System.out.println(inputArr); // inputArr가 로컬변수라 사용못함...
 
 				break;
 
 			case 4:
 				// 새 문제를 선정하고 입력된 내역을 초기화합니다.
+				//answer = new String();
+				//inputArr = new ArrayList<String>();
+				// 어떻게 다시 랜덤돌려서 하지..? 중복으로 기입..? 메소드 생성?
 
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
@@ -93,7 +112,16 @@ public class Main {
 				break;
 			}
 
-		} // while문 끝
+		}  catch (Exception e) {
+			System.out.println("1~5사이의 값을 입력해주세요.");
+			continue;
+			
+		}
+		}// while문 끝
+		
 	}
+	
+	
+
 
 }
